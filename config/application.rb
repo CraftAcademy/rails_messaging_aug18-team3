@@ -28,7 +28,7 @@ module Mailboxer
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
+    config.load_defaults 5.1
     config.action_mailer.default_url_options = { host: 'ca-mailboxer.herokuapp.com' }
 
     config.generators do |generate|
@@ -36,6 +36,10 @@ module Mailboxer
       generate.assets false
       generate.view_specs false
       generate.test_framework :rspec
+      generate.helper_specs false
+      generate.routing_specs false
+      generate.controller_specs false
+      generate.system_tests false
     end
   end
 end
