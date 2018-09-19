@@ -6,12 +6,13 @@ Feature: Signup to an account
   Scenario: As a user I would like to signup to an account
     Given I am on the landing page
     When I click on the "Sign up" button
-    Then I fill in "Name" with "Bob"
+    Then I should goto the registration form
+    When I fill in "Name" with "Bob"
     And I fill in "Email" with "bob@example.com"
     And I fill in "Password" with "foobar"
     And I fill in "Password confirmation" with "foobar"
-    When I click "Create"
-    Then I should be on the landing page
+    And I click on the "Create" button
+    Then I should be on the users registration page
     
 
 
