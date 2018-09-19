@@ -10,10 +10,8 @@ Feature: Login to account
 
     Scenario: As a user I would like to login to my account
     Given I am on the landing page
-    When I click on the "Login" button
-    Then I should be on the login form
-    When I fill in "Email" with "anyone@example.com"
+    When I click on the "Login" button    
+    And I fill in "Email" with "anyone@example.com"
     And I fill in "Password" with "foobarbar"
-    When I click the "Log in" button
-    Then I should be on the landing page
-    And I should see a message saying "Signed in successfully."
+    And I click the "Log in" button
+    Then I should see a message saying "Signed in successfully."
