@@ -7,11 +7,11 @@ When("I click on the {string} button") do |link|
 end
 
 Then("I should goto the registration form") do
-  visit new_user_registration_path
+  expect(current_path).to eq new_user_registration_path
 end
 
 Then("I fill in {string} with {string}") do |field, name|
-  fill_in(field, with: name)
+  fill_in field, with: name 
 end
 
 Then("I should be on the landing page") do
