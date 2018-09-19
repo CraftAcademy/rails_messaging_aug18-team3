@@ -12,7 +12,6 @@ Feature: Signup to an account
     And I fill in "Password" with "foobar"
     And I fill in "Password confirmation" with "foobar"
     And I click on the "Create" button
-    Then I should be on the users registration page
-    
+    Then I should be on the users registration page   
 
 

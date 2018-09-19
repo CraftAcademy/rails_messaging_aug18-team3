@@ -1,14 +1,14 @@
 Given("I navigate to the login page") do
     visit mailbox_inbox_path
-  end
+end
+
+Given("I should be logged in as {string}") do |name|
+  user = User.find_by(name: name)
+  login_as user    
+end
+
   
-  When("I submit email and password") do 
-    fill_in "Email", with: "anyone@example.com"
-    fill_in "Password", with: "foobarbar" 
-    click_on "Log in"
-  end
-  
-  Then("I should be logged in") do
-    expect(current_path).to eq mailbox_inbox_path
-  end
+Then("I should be logged in") do
+  expect(current_path).to eq root_path
+end
   
