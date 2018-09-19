@@ -11,5 +11,9 @@ Then("I select {string} named {string}") do |field, recipient|
   select(recipient, from: field)
 end
 
+Then("I should have a message in my inbox with the content {string}") do |message|
+  expect(page).to have_content message
+end
+
 
   
