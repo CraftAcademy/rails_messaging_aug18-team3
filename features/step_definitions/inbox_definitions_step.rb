@@ -1,5 +1,5 @@
-Given("I navigate to the login page") do
-    visit mailbox_inbox_path
+Given("I should see my inbox") do
+    expect(current_path).to eq mailbox_inbox_path
 end
 
 Given("I should be logged in as {string}") do |name|
@@ -7,8 +7,9 @@ Given("I should be logged in as {string}") do |name|
   login_as user    
 end
 
-  
-Then("I should be logged in") do
-  expect(current_path).to eq root_path
+Then("I select {string} named {string}") do |field, recipient|
+  select(recipient, from: field)
 end
+
+
   
