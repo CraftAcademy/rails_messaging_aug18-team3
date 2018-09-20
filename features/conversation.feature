@@ -8,10 +8,10 @@ Feature: Conversation
         | email              | password   | name |
         | tore@example.com   | foobarbar  | Tore |
         | olof@example.com   | mypassword | Olof |
-        And I should be logged in as "Tore" 
     
-    Scenario: As a user I should be able to send and receive message from others
-        Given I am on the landing page
+    Scenario: As a Tore I should be able to send a message to Olof
+        Given I should be logged in as "Tore" 
+        And I am on the landing page
         And I click on the "Inbox" button
         And I click on the "Compose" button
         And I select "Recipients" named "Olof"
@@ -19,5 +19,10 @@ Feature: Conversation
         And I fill in "conversation_body" with "Hello"            
         And I click on the "Send Message" button
         And I click on the "Logout" button
+    
+    Scenario: As a Olof I should be able to receive a message from Tore
         Given I should be logged in as "Olof"
+        And I am on the landing page
+        And I click on the "Inbox" button
+        Then I should have "1" new messages
         

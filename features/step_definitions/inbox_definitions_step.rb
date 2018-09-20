@@ -15,5 +15,10 @@ Then("I should have a message in my inbox with the content {string}") do |messag
   expect(page).to have_content message
 end
 
+Then("I should have {string} new messages") do |expected_count|
+  count = @receiver.mailbox.inbox.count
+  expect(count).to eq expected_count.to_i
+end
+
 
   
