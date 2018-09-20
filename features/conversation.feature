@@ -28,5 +28,13 @@ Feature: Conversation
         And I click on the "View" button
         And I click on the "Move to trash" button
         Then I should have "0" new messages
+    
+    Scenario: As a user I should be able to reply to a message
+        Given I am on the landing page
+        And I click on the "Inbox" button
+        And I click on the "View" button
+        And I fill in "message_body" with "Hello back!"
+        And I click on the "Reply" button
+        And I should see a message saying "Your reply message was successfully sent!"
 
         
