@@ -29,7 +29,7 @@ module Mailboxer
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.load_defaults 5.1
-    config.action_mailer.default_url_options = { host: 'ca-mailboxer.herokuapp.com' }
+    config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
 
     config.generators do |generate|
       generate.helper false
