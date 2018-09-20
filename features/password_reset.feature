@@ -1,6 +1,6 @@
 Feature: Password reset
     As a user 
-    If I lose my password
+    In order to retrieve my password
     I would like to be able to request a password reset
 
     Background: User is Logged in and sends message
