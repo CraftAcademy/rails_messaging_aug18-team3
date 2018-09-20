@@ -5,7 +5,7 @@ Given("the following user is in database") do |table|
 end
 
 When("I click the {string} button") do |button|
-  click_on button  
+  click_on button
 end
 
 Then("I should be on the login form") do
