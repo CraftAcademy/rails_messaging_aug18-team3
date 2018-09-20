@@ -11,7 +11,7 @@ Then("I should goto the registration form") do
 end
 
 Then("I fill in {string} with {string}") do |field, name|
-  fill_in field, with: name 
+  fill_in field, with: name
 end
 
 Then("I should be on the landing page") do
