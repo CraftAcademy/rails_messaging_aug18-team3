@@ -1,15 +1,14 @@
-Feature: Conversation
+Feature: Password reset
     As a user 
     If I lose my password
-    I should be able to request a password reset
+    I would like to be able to request a password reset
 
     Background: User is Logged in and sends message
         Given the following user is in database
         | email              | password   | name |
-        | tore@example.com   | foobarbar  | Tore |
-        | olof@example.com   | mypassword | Olof |
+        | tore@example.com   | foobarbar  | Tore |        
     
-    Scenario: As I user I shold be able to request a password reset
+    Scenario: As a user I should be able to request a password reset
       Given I am on the landing page
       And I click on the "Login" button
       And I click on the "Forgot your password?" button
