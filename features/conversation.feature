@@ -9,20 +9,17 @@ Feature: Conversation
         | tore@example.com   | foobarbar  | Tore |
         | olof@example.com   | mypassword | Olof |
     
-    Scenario: As a Tore I should be able to send a message to Olof
-        Given I should be logged in as "Tore" 
+    Scenario: As a user I should be able to send and receive messages to and from others
+        Given I should be logged in as "Tore"
         And I am on the landing page
-        And I click on the "Inbox" button
-        And I click on the "Compose" button
-        And I select "Recipients" named "Olof"
-        And I fill in "Subject" with "Hello to Olof!"
-        And I fill in "conversation_body" with "Hello"            
-        And I click on the "Send Message" button
+        And I send a mail to "Olof"
         And I click on the "Logout" button
-    
-    Scenario: As a Olof I should be able to receive a message from Tore
         Given I should be logged in as "Olof"
         And I am on the landing page
         And I click on the "Inbox" button
         Then I should have "1" new messages
+        And I click on the "View" button
+        And I click on the "Move to trash" button
+        Then I should have "0" new messages
+
         

@@ -3,8 +3,8 @@ Given("I should see my inbox") do
 end
 
 Given("I should be logged in as {string}") do |name|
-  user = User.find_by(name: name)
-  login_as user    
+  @user = User.find_by(name: name)
+  login_as @user    
 end
 
 Then("I select {string} named {string}") do |field, recipient|
@@ -13,6 +13,11 @@ end
 
 Then("I should have a message in my inbox with the content {string}") do |message|
   expect(page).to have_content message
+end
+
+And("I send a mail to {string}") do |name|
+  @receiver = User.find_by(name: name)
+  @user.send_message(@receiver, 'Body test hello', 'Our subject')
 end
 
 Then("I should have {string} new messages") do |expected_count|
