@@ -1,3 +1,12 @@
+
+Given("these emails exist") do |table|
+  table.hashes.each do |conversation|
+    sender = User.find_by(name: conversation[:sender])
+    receiver = User.find_by(name: conversation[:receiver])
+    sender.send_message(receiver, conversation[:body], conversation[:subject])        
+  end
+end
+
 Given("I should see my inbox") do
   expect(current_path).to eq mailbox_inbox_path
 end
@@ -15,13 +24,8 @@ Then("I should have a message in my inbox with the content {string}") do |messag
   expect(page).to have_content message
 end
 
-And("I send a mail to {string}") do |name|
-  @receiver = User.find_by(name: name)
-  @user.send_message(@receiver, 'Body test hello', 'Our subject')
-end
-
 Then("I should have {string} new messages") do |expected_count|
-  count = @receiver.mailbox.inbox.count
+  count = @user.mailbox.inbox.count
   expect(count).to eq expected_count.to_i
 end
 
