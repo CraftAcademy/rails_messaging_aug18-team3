@@ -3,7 +3,7 @@ Feature: Conversation
     in order to have a conversation with other people 
     I should be able to send and receive message from others
 
-    Background: User is Logged in
+    Background: User is Logged in and sends message
         Given the following user is in database
         | email              | password   | name |
         | tore@example.com   | foobarbar  | Tore |
@@ -14,7 +14,7 @@ Feature: Conversation
         And I click on the "Logout" button
         And I should be logged in as "Olof"
     
-    Scenario: As a user I should be able to send and receive messages to and from others
+    Scenario: As a user I should have a message in my mailbox
         Given I am on the landing page
         And I click on the "Inbox" button
         Then I should have "1" new messages
