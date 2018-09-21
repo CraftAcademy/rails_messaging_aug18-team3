@@ -1,6 +1,6 @@
 Feature: Send to multiple people
     As a user 
-    In order to save time
+    In order to have a conversation
     I would like to be able to send messages to multiple users at once
 
     Background: User is Logged in and sends message
