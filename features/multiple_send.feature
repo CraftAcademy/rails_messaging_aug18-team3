@@ -16,4 +16,8 @@ Feature: Send to multiple people
         Given I am on the landing page
         And I click on the "Inbox" button
         And I click on the "Compose" button
-        
+        And I select multiple "Recipients" named "Tore" and "Gustav"
+        And I fill in "Subject" with "Hello to ya'll!"
+        And I fill in "conversation_body" with "How are you guys?"            
+        And I click the "Send Message" button
+        Then I should have a message in my inbox with the content "Your message was successfully sent!"

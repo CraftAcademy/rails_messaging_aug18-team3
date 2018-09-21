@@ -20,6 +20,12 @@ Then("I select {string} named {string}") do |field, recipient|
   select recipient, from: field
 end
 
+Given("I select multiple {string} named {string} and {string}") do |field, recipient1, recipient2|
+  select recipient1, from: field
+  page.driver.browser.action.key_down(:shift).perform
+  select recipient2, from: field  
+end
+
 Then("I should have a message in my inbox with the content {string}") do |message|
   expect(page).to have_content message
 end
